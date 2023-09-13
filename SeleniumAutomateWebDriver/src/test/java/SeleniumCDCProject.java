@@ -8,7 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.remote.RemoteWebDriver;
+ 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumCDCProject {
@@ -17,12 +18,21 @@ public class SeleniumCDCProject {
 
 	public static void main(String[] args) {
 		
-		WebDriverManager.edgedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("debuggerAddress", "localhost:9222");
-		WebDriver driver = new ChromeDriver(options);
-		driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
-		// WebElement field1 = driver.findElement(By.xpath("//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input"));
+		WebDriver driver = new ChromeDriver();
+		// driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
+		
+		driver.get("http://erp.kpriet.ac.in:8181/erpoperations/login.aspx");
+		driver.findElement(By.name("txt_username")).sendKeys("21ec109");
+		driver.findElement(By.name("txt_password")).sendKeys("24/12/2003");
+		driver.findElement(By.name("cmd_login")).click();
+		System.out.println(driver.getPageSource());
+		
+
+		
+		// System.out.println(field1);
 		
 	}
 
