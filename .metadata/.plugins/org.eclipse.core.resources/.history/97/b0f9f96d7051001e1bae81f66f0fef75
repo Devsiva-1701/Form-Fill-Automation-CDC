@@ -1,0 +1,37 @@
+package selenium;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadDataExcel {
+
+	XSSFWorkbook workbook;
+	XSSFSheet sheet;
+	
+	public ReadDataExcel( String workbookPath ) {
+		
+		
+		try {
+			workbook = new XSSFWorkbook(workbookPath);
+			sheet = workbook.getSheet("UserDataSheet");
+			displayData(sheet);
+		} catch (Exception e) {
+			
+			System.out.println( "Some Error Occured..." );
+			System.out.println(e.getCause());
+			
+		}
+		
+	}
+	
+	public static void displayData( XSSFSheet sheet )
+	{
+		Object value = sheet.getRow(0).getCell(0).getStringCellValue();
+		System.out.println(value);
+	}
+	
+	
+	
+
+}
+

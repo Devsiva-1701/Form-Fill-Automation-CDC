@@ -1,0 +1,13 @@
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadExcelData {
+
+	XSSFWorkbook workbook;
+	
+	public ReadExcelData( XSSFWorkbook workbook  ) {
+		
+		this.workbook = workbook;
+		
+	}
+
+}

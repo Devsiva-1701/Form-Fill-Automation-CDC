@@ -1,0 +1,47 @@
+package selenium;
+
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+import org.openqa.selenium.devtools.v114.input.Input;
+
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.devtools.idealized.Network.UserAgent;
+//
+//import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeleniumMain {
+
+	public static void main(String[] args) throws Exception {
+		
+//		WebDriverManager.chromedriver().setup();		
+//		WebDriver driver = new ChromeDriver();		
+//		driver.get("https://www.youtube.com/@cringecat9782");
+		
+		
+//		String getdir = System.getProperty("user.dir");
+		Scanner input = new Scanner(System.in);
+		
+		String workbookPath = "./assets/ExcelFiles/UserData.xlsx";
+		
+		
+			FileInputStream fis = new FileInputStream(workbookPath);
+		
+		
+		System.out.println("Do you want the data to be written? Y/N ");
+		String ans =  input.next();
+		
+		ReadDataExcel read = new ReadDataExcel( fis );
+		read.displayData();
+		
+		if(ans.equalsIgnoreCase("y"))
+		{
+			
+			read.writeData();
+			
+		}
+		
+		
+	}
+
+}

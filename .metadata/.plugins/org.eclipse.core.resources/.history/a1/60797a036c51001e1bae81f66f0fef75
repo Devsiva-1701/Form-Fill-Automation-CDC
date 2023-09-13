@@ -1,0 +1,16 @@
+package selenium;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadDataExcel {
+
+	XSSFWorkbook workbook;
+	
+	public ReadDataExcel( XSSFWorkbook workbook  ) {
+		
+		this.workbook = workbook;
+		
+	}
+
+}
+

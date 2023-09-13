@@ -1,0 +1,16 @@
+package selenium;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadDataExcel {
+
+	String workbookPath;
+	
+	public ReadDataExcel( String workbookPath ) {
+		
+		this.workbookPath = workbookPath;
+		
+	}
+
+}
+

@@ -1,0 +1,25 @@
+package selenium;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadDataExcel {
+
+	XSSFWorkbook workbook;
+	
+	public ReadDataExcel( String workbookPath ) {
+		
+		
+		try {
+			workbook = new XSSFWorkbook(workbookPath);
+		} catch (Exception e) {
+			
+			System.out.println( "Some Error Occured..." );
+			System.out.println(e.getCause());
+			
+		}
+		
+		
+	}
+
+}
+
