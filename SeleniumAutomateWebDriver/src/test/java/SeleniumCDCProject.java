@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,43 +12,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumCDCProject {
+	//Remote chrome access used to access the current opened tab
+	//chrome.exe --remote-debugging-port=9222 --user-data-dir=E:\NavapData\chromedata (create a folder)
 
 	public static void main(String[] args) {
 		
-// 		WebDriverManager.edgedriver().setup();
-// String userProfilePath = "C:\\Users\\Admin\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default";
-// EdgeOptions options = new EdgeOptions();
-//         options.addArguments("user-data-dir=" + userProfilePath);
-// 		System.out.println("Break 1 ");
-// WebDriver driver = new EdgeDriver(options);
-// 		System.out.println("Break 1 ");
-		
-// 		driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
-// 		System.out.println(driver.getTitle());
-
+		WebDriverManager.edgedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 236\\Default");
-		
-
-
-        // Create ChromeOptions and add the "user-data-dir" argument
-
-        
-		System.out.println("Break 1 ");
-
-// DesiredCapabilities capabilities = new DesiredCapabilities();
-// String chromeProfile = "C:\\Users\\Tiuz\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
-// ArrayList<String> switches = new ArrayList<String>();
-// switches.add("--user-data-dir=" + chromeProfile);
-// capabilities.setCapability("chrome.switches", switches);
-// WebDriver driver = new ChromeDriver(capabilities);
-
-		// WebDriver driver = new ChromeDriver(options);
-		// System.out.println("Break 1 ");
-		
-		// driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
-		// System.out.println(driver.getTitle());
-		
+		options.setExperimentalOption("debuggerAddress", "localhost:9222");
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
+		// WebElement field1 = driver.findElement(By.xpath("//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input"));
 		
 	}
 
