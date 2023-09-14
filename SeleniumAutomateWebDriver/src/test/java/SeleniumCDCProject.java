@@ -24,11 +24,15 @@ public class SeleniumCDCProject {
 		WebDriver driver = new ChromeDriver();
 		// driver.get("https://docs.google.com/forms/d/e/1FAIpQLSdhGktN8PpyUQ4-SsOV6FROxXJNO5pUMrKmEeoAz0maS--cpA/viewform?usp=sf_link");
 		
-		driver.get("http://erp.kpriet.ac.in:8181/erpoperations/login.aspx");
-		driver.findElement(By.name("txt_username")).sendKeys("21ec109");
-		driver.findElement(By.name("txt_password")).sendKeys("24/12/2003");
-		driver.findElement(By.name("cmd_login")).click();
-		System.out.println(driver.getPageSource());
+		driver.get("D:\\FormJs\\index.html");
+		driver.findElement(By.id("fname")).sendKeys("Pavan");
+		driver.findElement(By.id("lname")).sendKeys("S");
+		driver.findElement(By.id("pnumber")).sendKeys("0000000000");
+		driver.findElement(By.id("email")).sendKeys("21ec109@kpriet.ac.in");
+		driver.findElement(By.id("college")).sendKeys("Kpr Institute of Engineering and Technology");
+		driver.findElement(By.id("submit")).click();
+
+		// System.out.println(driver.getPageSource());
 		
 
 		
